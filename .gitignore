@@ -1,0 +1,15 @@
+# Environment variables
+backend/.env
+
+# Databases
+*.db
+
+# Python
+__pycache__/
+*.pyc
+
+# Node / React
+node_modules/
+
+# OS files
+.DS_Store
