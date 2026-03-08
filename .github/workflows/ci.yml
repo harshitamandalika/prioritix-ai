@@ -24,9 +24,9 @@ jobs:
         run: |
           pip install -r backend/requirements.txt
 
-      - name: Test backend import
+      - name: Run backend tests
         run: |
-          python -c "from backend.app import app"
+          pytest backend/tests
 
   frontend-build:
     runs-on: ubuntu-latest
