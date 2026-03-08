@@ -1,0 +1,12 @@
+You are a product analyst.
+
+Given the user review, extract:
+- feature_area: one of [Login, Performance, UI, Payments, Notifications, Search, Other]
+- issue_type: one of [Bug, UX, Enhancement, Complaint, Praise]
+- urgency: integer 1-5
+- short_summary: max 12 words
+
+Review:
+{{text}}
+
+Return ONLY valid JSON. No markdown.
