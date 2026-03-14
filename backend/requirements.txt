@@ -2,6 +2,9 @@ fastapi
 uvicorn
 pandas
 scikit-learn
+python-dotenv
+google-genai
+sqlalchemy
 numpy
 scipy
 pydantic
