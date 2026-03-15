@@ -6,39 +6,39 @@ An AI-driven product feedback intelligence platform that transforms large volume
 
 ## Overview
 
-Prioritix AI helps teams make sense of customer feedback at scale. Instead of manually reading thousands of app reviews, the platform automatically processes feedback, identifies sentiment and urgency, groups recurring pain points, and highlights the most important issues for roadmap decision-making.
+Prioritix AI helps teams analyze customer feedback at scale. Instead of manually reading thousands of app reviews, the platform processes review data, classifies it by sentiment, urgency, and feature area, groups related reviews into clusters, and surfaces the most important patterns through an interactive dashboard and AI-generated executive summaries.
 
-The system is designed to reduce noise, surface actionable feedback faster, and support product teams with a clear, data-driven view of user pain points.
+The goal is to reduce noise, speed up feedback analysis, and help product teams make better roadmap decisions using structured evidence from customer reviews.
 
 ## Problem Statement
 
-Modern product teams receive feedback from multiple channels, especially app store reviews. While this feedback is valuable, it is often:
+Modern product teams receive large volumes of feedback, especially through app store reviews. While this feedback is valuable, it is often:
 
 - Unstructured and difficult to analyze manually
-- Large in volume and time-consuming to review
+- Time-consuming to review at scale
 - Repetitive, noisy, and low-signal
-- Hard to prioritize consistently across teams
+- Difficult to prioritize consistently across teams
 
-Prioritix AI addresses this by building an end-to-end pipeline that converts raw reviews into structured insights.
+Prioritix AI addresses this by building an end-to-end pipeline that converts raw app reviews into structured product insights and presents them through a dashboard designed for exploration and prioritization.
 
 ## Key Features
 
 - Ingests and processes 10K+ app reviews
-- Filters low-signal feedback to reduce manual review effort
 - Classifies reviews by feature area, sentiment, and urgency
-- Clusters high-urgency negative reviews to uncover recurring themes
-- Highlights top user pain points for product prioritization
-- Provides a dashboard for visual exploration of feedback patterns
-- Includes an AI Copilot interface for insight discovery
-- Containerized for reproducible development and deployment workflows
-- Automated with GitHub Actions for continuous integration
+- Groups related reviews into clusters for issue exploration
+- Highlights recurring pain points across customer feedback
+- Provides a dashboard for feature-level and cluster-level analysis
+- Displays representative cluster samples for qualitative inspection
+- Generates AI-powered executive summaries of processed review insights using Gemini
+- Stores both raw and enriched review data in SQLite
+- Supports reproducible development workflows with Docker
+- Uses GitHub Actions for continuous integration
 
 ## Impact
 
 - Reduced manual review effort by **80%**
 - Reduced ambiguous feedback by **65%+**
-- Identified **8–10 recurring issue themes** from high-priority negative reviews
-- Enabled product and engineering teams to focus on the most actionable feedback faster
+- Identified recurring issue themes from high-priority negative reviews
 
 ## Tech Stack
 
@@ -54,8 +54,13 @@ Prioritix AI addresses this by building an end-to-end pipeline that converts raw
 - Text preprocessing
 - TF-IDF
 - K-Means clustering
-- Sentiment and urgency classification
+- Sentiment classification
+- Urgency classification
 - Feature area classification
+
+### LLM Integration
+- Gemini API
+- Executive summarization of processed review insights
 
 ### DevOps / Tooling
 - Docker
@@ -66,33 +71,45 @@ Prioritix AI addresses this by building an end-to-end pipeline that converts raw
 The platform follows an end-to-end feedback intelligence workflow:
 
 1. **Data Ingestion**  
-   Raw app reviews are collected and loaded into the system.
+   Raw app reviews are collected and stored in SQLite.
 
 2. **Preprocessing**  
    Reviews are cleaned, normalized, and prepared for downstream analysis.
 
-3. **Feedback Classification**  
-   A hybrid NLP pipeline classifies each review across dimensions such as:
+3. **Feedback Enrichment**  
+   Each review is enriched with structured labels such as:
    - Feature area
    - Sentiment
    - Urgency
+   - Issue type
 
-4. **Noise Reduction and Prioritization**  
-   Low-signal reviews are filtered out using a prioritization framework, allowing teams to focus on actionable feedback.
+4. **Theme Discovery**  
+   Reviews are grouped into clusters to surface recurring issue patterns and enable exploratory analysis of related complaints.
 
-5. **Theme Discovery**  
-   High-urgency negative reviews are vectorized using TF-IDF and clustered using K-Means to identify recurring pain points.
+5. **Feature-Level Analysis**  
+   Aggregated insights are computed by feature area to show:
+   - total review volume
+   - sentiment distribution
+   - high-urgency concentration
 
-6. **Visualization and Exploration**  
-   A React dashboard presents trends, categories, and issue themes for easier product analysis.
+6. **Dashboard Visualization**  
+   A React dashboard presents:
+   - a feature table
+   - cluster summaries
+   - representative cluster samples
 
-7. **AI Copilot Support**  
-   An AI-assisted interface helps users explore feedback insights more efficiently.
+7. **AI Executive Summary**  
+   A Gemini-powered summarization layer generates concise executive summaries from processed review insights, highlighting top pain points, urgent issues, and recommended product priorities.
 
 ## Example Use Cases
 
 - Identify the most urgent product issues from thousands of app reviews
-- Track which feature areas are receiving the most negative feedback
-- Discover recurring pain points impacting user experience
+- Track which feature areas receive the most negative or high-urgency feedback
+- Explore clusters of related complaints to understand recurring patterns
+- Inspect sample reviews within each cluster for qualitative context
+- Generate executive summaries for product and engineering stakeholders
 - Support roadmap planning using structured customer feedback insights
-- Help product managers and engineering teams prioritize fixes with evidence
+
+## Why This Project Matters
+
+Prioritix AI demonstrates how AI can be used to convert noisy customer feedback into structured decision support for product teams. Rather than treating reviews as raw text alone, the platform combines analytics, clustering, and LLM-based summarization to help teams identify what matters most and respond faster to user pain points.
