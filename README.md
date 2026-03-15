@@ -38,12 +38,6 @@ Prioritix AI addresses this by building an end-to-end pipeline that converts raw
 - Supports reproducible development workflows with Docker
 - Uses GitHub Actions for continuous integration
 
-## Impact
-
-- Reduced manual review effort by **80%**
-- Reduced ambiguous feedback by **65%+**
-- Identified recurring issue themes from high-priority negative reviews
-
 ## Tech Stack
 
 ### Backend
