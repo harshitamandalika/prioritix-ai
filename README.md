@@ -10,8 +10,8 @@ Prioritix AI helps teams analyze customer feedback at scale. Instead of manually
 
 The goal is to reduce noise, speed up feedback analysis, and help product teams make better roadmap decisions using structured evidence from customer reviews.
 
-![Dashboard - AI Executive Summary](AIExecutiveSummary.png)
-![Dashboard - Feature Table](FeatureTable.png)
+![Dashboard - AI Executive Summary](AI Executive Summary.png)
+![Dashboard - Feature Table](Feature Table.png)
 ![Dashboard - Clusters](Clusters.png)
 
 ## Problem Statement
